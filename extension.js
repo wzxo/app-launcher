@@ -39,10 +39,10 @@ function set_theme(theme) {
 
 function set_theme_label(theme){
     if(theme == "Adwaita") {
-        this.themeMenu.label.text = "Light Theme";
+        this.themeMenu.label.text = "Light Appearance";
         this.themeMenu.icon.icon_name = "weather-clear-symbolic";
     } else if (theme == "Adwaita-dark") {
-        this.themeMenu.label.text = "Dark Theme";
+        this.themeMenu.label.text = "Dark Appearance";
         this.themeMenu.icon.icon_name = "weather-clear-night-symbolic";
     }
 }
