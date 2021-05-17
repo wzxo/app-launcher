@@ -9,14 +9,14 @@ function init() {}
 function enable() {
     this.mainMenu = Main.panel.statusArea['aggregateMenu'].menu;
 
-    this.themeMenu = new PopupMenu.PopupSubMenuMenuItem("Theme", true);
+    this.themeMenu = new PopupMenu.PopupSubMenuMenuItem("Appearance", true);
     this.mainMenu.addMenuItem(themeMenu, 8);
-    this.themeMenu.icon.icon_name = "starred-symbolic";
+    this.themeMenu.icon.icon_name = "weather-clear-symbolic";
 
     this.light = new PopupMenu.PopupMenuItem("Light");
     this.light.connect('activate', (item, event) => {
         this.reset_ornament();
-        this.set_theme("Pop");
+        this.set_theme("Adwaita");
         item.setOrnament(Ornament.DOT);
     });
     this.themeMenu.menu.addMenuItem(this.light, 0);
@@ -24,7 +24,7 @@ function enable() {
     this.dark = new PopupMenu.PopupMenuItem("Dark");
     this.dark.connect('activate', (item, event) => {
         this.reset_ornament();
-        this.set_theme("Pop-dark");
+        this.set_theme("Adwaita-dark");
         item.setOrnament(Ornament.DOT);
     });
     this.themeMenu.menu.addMenuItem(this.dark, 1);
@@ -33,23 +33,18 @@ function enable() {
 }
 
 function set_theme(theme) {
-    set_gtk_theme(theme);
     set_user_theme(theme);
     set_theme_label(theme);
 }
 
 function set_theme_label(theme){
-    if(theme == "Pop") {
+    if(theme == "Adwaita") {
         this.themeMenu.label.text = "Light Theme";
-    } else if (theme == "Pop-dark") {
+        this.themeMenu.icon.icon_name = "weather-clear-symbolic";
+    } else if (theme == "Adwaita-dark") {
         this.themeMenu.label.text = "Dark Theme";
+        this.themeMenu.icon.icon_name = "weather-clear-night-symbolic";
     }
-}
-
-function set_gtk_theme(theme) {
-    Main.setThemeStylesheet("/usr/share/themes/"+theme+"/gnome-shell/gnome-shell.css");
-    Main.loadTheme();
-    Util.trySpawn(["dconf", "write", "/org/gnome/shell/extensions/user-theme/name", "'" + theme +"'"]);
 }
 
 function set_user_theme(theme) {
