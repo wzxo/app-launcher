@@ -2,7 +2,7 @@
 # From https://github.com/pop-os/gnome-shell-extension-system76-power
 
 # Retrieve the UUID from ``metadata.json``
-UUID = gnometoggle@foreverxml.github.io
+UUID = app-launcher@wzxo.github.io
 
 ifeq ($(strip $(DESTDIR)),)
 INSTALLBASE = $(HOME)/.local/share/gnome-shell/extensions

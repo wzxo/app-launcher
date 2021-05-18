@@ -1,8 +1,8 @@
 {
-  "name": "Gnome Toggle",
-  "description": "Turn on your GNOME dark mode!",
-  "uuid": "gnometoggle@foreverxml.github.io",
-  "original-author": "foreverxml@tuta.io",
+  "name": "App Launcher",
+  "description": "Launch apps from menu",
+  "uuid": "app-launcher@wzxo.github.io",
+  "original-author": "zxoclm@tutanota.com",
   "shell-version": ["3.36","3.38","40"],
-  "url": "https://github.com/foreverxml/gnome-toggle"
+  "url": "https://github.com/wzxo/app-launcher"
 }
